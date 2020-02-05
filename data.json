@@ -1,0 +1,129 @@
+"pieces":[
+  {"position":"a1",
+  "color":"white",
+  "type":"rook"},
+
+  {"position":"b1",
+  "color":"white",
+  "type":"knight"},
+
+  {"position":"c1",
+  "color":"white",
+  "type":"bishop"},
+
+  {"position":"d1",
+  "color":"white",
+  "type":"queen"},
+
+  {"position":"e1",
+  "color":"white",
+  "type":"king"},
+
+  {"position":"f1",
+  "color":"white",
+  "type":"bishop"},
+
+  {"position":"g1",
+  "color":"white",
+  "type":"knight"},
+
+  {"position":"h1",
+  "color":"white",
+  "type":"rook"},
+
+  {"position":"a2",
+  "color":"white",
+  "type":"pawn"},
+
+  {"position":"b2",
+  "color":"white",
+  "type":"pawn"},
+
+  {"position":"c2",
+  "color":"white",
+  "type":"pawn"},
+
+  {"position":"d2",
+  "color":"white",
+  "type":"pawn"},
+
+  {"position":"e2",
+  "color":"white",
+  "type":"pawn"},
+
+  {"position":"f2",
+  "color":"white",
+  "type":"pawn"},
+
+  {"position":"g2",
+  "color":"white",
+  "type":"pawn"},
+
+  {"position":"h2",
+  "color":"white",
+  "type":"pawn"},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""},
+
+  {"position":"",
+  "color":"",
+  "type":""}
+]
