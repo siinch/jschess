@@ -1,7 +1,7 @@
-var squares = createSquareData();
+var squares = CreateSquares();
 //console.log(squares);
 
-function createSquareData () {
+function CreateSquares () {
   var resultSquares = [];
   var rows = [1, 2, 3, 4, 5, 6, 7, 8];
   var colums = ["a", "b", "c", "d", "e", "f", "g", "h"];
@@ -21,6 +21,6 @@ function createSquareData () {
 
     }
   }
-  
+
   return resultSquares;
 }
