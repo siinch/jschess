@@ -2,7 +2,7 @@ var squares = CreateSquares();
 //console.log(squares);
 
 function CreateSquares () {
-  var resultSquares = [];
+  var squares = [];
   var rows = [1, 2, 3, 4, 5, 6, 7, 8];
   var colums = ["a", "b", "c", "d", "e", "f", "g", "h"];
   counter = 1;
@@ -17,10 +17,10 @@ function CreateSquares () {
       else
         square.color = "white";
       counter++;
-      resultSquares.push(square);
+      squares.push(square);
 
     }
   }
 
-  return resultSquares;
+  return squares;
 }
