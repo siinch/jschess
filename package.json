@@ -1,0 +1,26 @@
+{
+  "name": "jschess",
+  "version": "1.0.0",
+  "description": "JavaScript Chess",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siinch/jschess.git"
+  },
+  "keywords": [
+    "chess",
+    "javascript"
+  ],
+  "author": "siinch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/siinch/jschess/issues"
+  },
+  "homepage": "https://github.com/siinch/jschess#readme",
+  "dependencies": {
+    "requirejs": "^2.3.6"
+  }
+}
