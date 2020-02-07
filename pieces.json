@@ -1,129 +1,193 @@
 "pieces":[
-  {"position":"a1",
-  "color":"white",
-  "type":"rook"},
+  {
+    "position":"a1",
+    "color":"white",
+    "type":"rook"
+  },
 
-  {"position":"b1",
-  "color":"white",
-  "type":"knight"},
+  {
+    "position":"b1",
+    "color":"white",
+    "type":"knight"
+  },
 
-  {"position":"c1",
-  "color":"white",
-  "type":"bishop"},
+  {
+    "position":"c1",
+    "color":"white",
+    "type":"bishop"
+  },
 
-  {"position":"d1",
-  "color":"white",
-  "type":"queen"},
+  {
+    "position":"d1",
+    "color":"white",
+    "type":"queen"
+  },
 
-  {"position":"e1",
-  "color":"white",
-  "type":"king"},
+  {
+    "position":"e1",
+    "color":"white",
+    "type":"king"
+  },
 
-  {"position":"f1",
-  "color":"white",
-  "type":"bishop"},
+  {
+    "position":"f1",
+    "color":"white",
+    "type":"bishop"
+  },
 
-  {"position":"g1",
-  "color":"white",
-  "type":"knight"},
+  {
+    "position":"g1",
+    "color":"white",
+    "type":"knight"
+  },
 
-  {"position":"h1",
-  "color":"white",
-  "type":"rook"},
+  {
+    "position":"h1",
+    "color":"white",
+    "type":"rook"
+  },
 
-  {"position":"a2",
-  "color":"white",
-  "type":"pawn"},
+  {
+    "position":"a2",
+    "color":"white",
+    "type":"pawn"
+  },
 
-  {"position":"b2",
-  "color":"white",
-  "type":"pawn"},
+  {
+    "position":"b2",
+    "color":"white",
+    "type":"pawn"
+  },
 
-  {"position":"c2",
-  "color":"white",
-  "type":"pawn"},
+  {
+    "position":"c2",
+    "color":"white",
+    "type":"pawn"
+  },
 
-  {"position":"d2",
-  "color":"white",
-  "type":"pawn"},
+  {
+    "position":"d2",
+    "color":"white",
+    "type":"pawn"
+  },
 
-  {"position":"e2",
-  "color":"white",
-  "type":"pawn"},
+  {
+    "position":"e2",
+    "color":"white",
+    "type":"pawn"
+  },
 
-  {"position":"f2",
-  "color":"white",
-  "type":"pawn"},
+  {
+    "position":"f2",
+    "color":"white",
+    "type":"pawn"
+  },
 
-  {"position":"g2",
-  "color":"white",
-  "type":"pawn"},
+  {
+    "position":"g2",
+    "color":"white",
+    "type":"pawn"
+  },
 
-  {"position":"h2",
-  "color":"white",
-  "type":"pawn"},
+  {
+    "position":"h2",
+    "color":"white",
+    "type":"pawn"
+  },
 
-  {"position":"a7",
-  "color":"black",
-  "type":"pawn"},
+  {
+    "position":"a7",
+    "color":"black",
+    "type":"pawn"
+  },
 
-  {"position":"b7",
-  "color":"black",
-  "type":"pawn"},
+  {
+    "position":"b7",
+    "color":"black",
+    "type":"pawn"
+  },
 
-  {"position":"c7",
-  "color":"black",
-  "type":"pawn"},
+  {
+    "position":"c7",
+    "color":"black",
+    "type":"pawn"
+  },
 
-  {"position":"d7",
-  "color":"black",
-  "type":"pawn"},
+  {
+    "position":"d7",
+    "color":"black",
+    "type":"pawn"
+  },
 
-  {"position":"e7",
-  "color":"black",
-  "type":"pawn"},
+  {
+    "position":"e7",
+    "color":"black",
+    "type":"pawn"
+  },
 
-  {"position":"f7",
-  "color":"black",
-  "type":"pawn"},
+  {
+    "position":"f7",
+    "color":"black",
+    "type":"pawn"
+  },
 
-  {"position":"g7",
-  "color":"black",
-  "type":"pawn"},
+  {
+    "position":"g7",
+    "color":"black",
+    "type":"pawn"
+  },
 
-  {"position":"h7",
-  "color":"black",
-  "type":"pawn"},
+  {
+    "position":"h7",
+    "color":"black",
+    "type":"pawn"
+  },
 
-  {"position":"a8",
-  "color":"black",
-  "type":"rook"},
+  {
+    "position":"a8",
+    "color":"black",
+    "type":"rook"
+  },
 
-  {"position":"b8",
-  "color":"black",
-  "type":"knight"},
+  {
+    "position":"b8",
+    "color":"black",
+    "type":"knight"
+  },
 
-  {"position":"c8",
-  "color":"black",
-  "type":"bishop"},
+  {
+    "position":"c8",
+    "color":"black",
+    "type":"bishop"
+  },
 
-  {"position":"d8",
-  "color":"black",
-  "type":"queen"},
+  {
+    "position":"d8",
+    "color":"black",
+    "type":"queen"
+  },
 
-  {"position":"e8",
-  "color":"black",
-  "type":"king"},
+  {
+    "position":"e8",
+    "color":"black",
+    "type":"king"
+  },
 
-  {"position":"f8",
-  "color":"black",
-  "type":"bishop"},
+  {
+    "position":"f8",
+    "color":"black",
+    "type":"bishop"
+  },
 
-  {"position":"g8",
-  "color":"black",
-  "type":"knight"},
+  {
+    "position":"g8",
+    "color":"black",
+    "type":"knight"
+  },
 
-  {"position":"h8",
-  "color":"black",
-  "type":"rook"}
+  {
+    "position":"h8",
+    "color":"black",
+    "type":"rook"
+  }
 ]
