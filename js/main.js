@@ -1,11 +1,11 @@
 require.config({
 
   paths: {
-    PieceData: "data/PieceData.js"
+    PieceData: "data/PieceData"
   }
 
 });
 
-require([], function() {
-  console.log("hello from main");
+require(["PieceData"], function(pd) {
+  console.log(pd.pieces);
 });
