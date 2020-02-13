@@ -12,6 +12,10 @@ define (["PieceData"], function (pd) {
     pd.pieces.find(x => x.position === fromPos).position = toPos;
   }
 
+  function GetPiece (position) {
+    return pd.pieces.find(x => x.position === position);
+  }
+
   function GetPieces () {
     return pd.pieces;
   }
@@ -20,6 +24,7 @@ define (["PieceData"], function (pd) {
     RemovePiece,
     ResetPieces,
     GetPieces,
-    MovePiece
+    MovePiece,
+    GetPiece
   }
 });

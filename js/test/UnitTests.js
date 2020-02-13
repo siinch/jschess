@@ -30,7 +30,13 @@ function (pc) {
     pc.MovePiece(fromPos, toPos);
 
     console.log("MovePiece_Success: " + (pc.GetPieces()[0].position === toPos));
+    pc.ResetPieces();
   } MovePiece_Success();
+
+  function GetPiece_Success () {
+    var piece = pc.GetPiece("a1");
+    console.log("GetPiece_Success: " + (piece.position === "a1" && piece.color === "white" && piece.type === "rook"));
+  } GetPiece_Success();
 
   return {
 
