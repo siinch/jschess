@@ -8,6 +8,10 @@ define (["PieceData"], function (pd) {
     pd.pieces = pd.CreatePieces();
   }
 
+  function MovePiece (fromPos, toPos) {
+    pd.pieces.find(x => x.position === fromPos).position = toPos;
+  }
+
   function GetPieces () {
     return pd.pieces;
   }
@@ -15,6 +19,7 @@ define (["PieceData"], function (pd) {
   return {
     RemovePiece,
     ResetPieces,
-    GetPieces
+    GetPieces,
+    MovePiece
   }
 });
