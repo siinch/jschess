@@ -23,6 +23,15 @@ function (pc) {
     pc.ResetPieces();
   } RemovePiece_Success();
 
+  function MovePiece_Success () {
+    var fromPos = "a1";
+    var toPos = "a4";
+
+    pc.MovePiece(fromPos, toPos);
+
+    console.log("MovePiece_Success: " + (pc.GetPieces()[0].position === toPos));
+  } MovePiece_Success();
+
   return {
 
   }
