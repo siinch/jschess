@@ -1,11 +1,11 @@
 require.config({
 
   paths: {
-    PieceData: "data/PieceData"
+    PieceData: "data/PieceData",
+    PieceControl: "control/PieceControl"
   }
 
 });
 
-require(["PieceData"], function(pd) {
-  console.log(pd.pieces);
+require(["PieceControl"], function(pc) {
 });
