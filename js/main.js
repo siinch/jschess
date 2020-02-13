@@ -2,10 +2,11 @@ require.config({
 
   paths: {
     PieceData: "data/PieceData",
-    PieceControl: "control/PieceControl"
+    PieceControl: "control/PieceControl",
+    UnitTests: "test/UnitTests"
   }
 
 });
 
-require(["PieceControl"], function(pc) {
+require(["UnitTests"], function(ut) {
 });
