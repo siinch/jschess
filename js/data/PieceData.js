@@ -38,12 +38,8 @@ define([], function() {
     return pieces;
   }
 
-  function ResetPieces () {
-    pieces = CreatePieces();
-  }
-
   return {
     pieces,
-    ResetPieces
+    CreatePieces
   };
 });

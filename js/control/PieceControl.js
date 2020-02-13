@@ -4,7 +4,17 @@ define (["PieceData"], function (pd) {
     pd.pieces = pd.pieces.filter(x => x.position !== position);
   }
 
+  function ResetPieces () {
+    pd.pieces = pd.CreatePieces();
+  }
+
+  function GetPieces () {
+    return pd.pieces;
+  }
+
   return {
-    RemovePiece
+    RemovePiece,
+    ResetPieces,
+    GetPieces
   }
 });
