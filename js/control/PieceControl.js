@@ -21,7 +21,6 @@ define (["PieceData"], function (pd) {
   }
 
   function UpdatePieceType (position, type) {
-    //pd.pieces[pd.pieces.indexOf(piece)].type = type;
     pd.pieces.find(x => x.position === position).type = type;
   }
 
