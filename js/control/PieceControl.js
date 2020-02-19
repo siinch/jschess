@@ -8,6 +8,10 @@ define (["PieceData"], function (pd) {
     pd.pieces = pd.CreatePieces();
   }
 
+  function GetPieces () {
+    return pd.pieces;
+  }
+
   function MovePiece (fromPos, toPos) {
     pd.pieces.find(x => x.position === fromPos).position = toPos;
   }
@@ -16,8 +20,8 @@ define (["PieceData"], function (pd) {
     return pd.pieces.find(x => x.position === position);
   }
 
-  function GetPieces () {
-    return pd.pieces;
+  function UpdatePieceType (piece, type) {
+    pd.pieces[pd.pieces.indexOf(piece)].type = type;
   }
 
   return {
@@ -25,6 +29,7 @@ define (["PieceData"], function (pd) {
     ResetPieces,
     GetPieces,
     MovePiece,
-    GetPiece
+    GetPiece,
+    UpdatePieceType
   }
 });

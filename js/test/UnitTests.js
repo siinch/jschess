@@ -38,6 +38,17 @@ function (pc) {
     console.log("GetPiece_Success: " + (piece.position === "a1" && piece.color === "white" && piece.type === "rook"));
   } GetPiece_Success();
 
+  function UpdatePieceType_Success () {
+    var position = "a1";
+    var piece = pc.GetPiece(position);
+    var type = "rook";
+
+    pc.UpdatePieceType(piece, type);
+
+    console.log("UpdatePieceType_Success: " + (pc.GetPiece(position).type === type));
+    pc.ResetPieces();
+  } UpdatePieceType_Success();
+
   return {
 
   }
