@@ -1,6 +1,6 @@
 define (["PieceData"], function (pd) {
 
-  function RemovePiece (position) {
+  function DeletePiece (position) {
     pd.pieces = pd.pieces.filter(x => x.position !== position);
   }
 
@@ -25,7 +25,7 @@ define (["PieceData"], function (pd) {
   }
 
   return {
-    RemovePiece,
+    DeletePiece,
     ResetPieces,
     GetPieces,
     UpdatePiecePosition,

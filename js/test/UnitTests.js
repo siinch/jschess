@@ -8,20 +8,20 @@ function (pc) {
   function ResetPieces_Success() {
     var original = pc.GetPieces();
 
-    pc.RemovePiece("a1");
+    pc.DeletePiece("a1");
     pc.ResetPieces();
 
     console.log("ResetPieces_Success: " + (original[0].position === pc.GetPieces()[0].position));
   } ResetPieces_Success();
 
-  function RemovePiece_Success() {
+  function DeletePiece_Success() {
     var position = "a1";
 
-    pc.RemovePiece(position);
+    pc.DeletePiece(position);
 
-    console.log("RemovePiece_Success: " + (pc.GetPieces().filter(x => position === x.position).length === 0));
+    console.log("DeletePiece_Success: " + (pc.GetPieces().filter(x => position === x.position).length === 0));
     pc.ResetPieces();
-  } RemovePiece_Success();
+  } DeletePiece_Success();
 
   function UpdatePiecePosition_Success () {
     var fromPos = "a1";
