@@ -23,15 +23,15 @@ function (pc) {
     pc.ResetPieces();
   } RemovePiece_Success();
 
-  function MovePiece_Success () {
+  function UpdatePiecePosition_Success () {
     var fromPos = "a1";
     var toPos = "a4";
 
-    pc.MovePiece(fromPos, toPos);
+    pc.UpdatePiecePosition(fromPos, toPos);
 
-    console.log("MovePiece_Success: " + (pc.GetPieces()[0].position === toPos));
+    console.log("UpdatePiecePosition_Success: " + (pc.GetPieces()[0].position === toPos));
     pc.ResetPieces();
-  } MovePiece_Success();
+  } UpdatePiecePosition_Success();
 
   function GetPiece_Success () {
     var piece = pc.GetPiece("a1");
