@@ -40,10 +40,9 @@ function (pc) {
 
   function UpdatePieceType_Success () {
     var position = "a1";
-    var piece = pc.GetPiece(position);
     var type = "rook";
 
-    pc.UpdatePieceType(piece, type);
+    pc.UpdatePieceType(position, type);
 
     console.log("UpdatePieceType_Success: " + (pc.GetPiece(position).type === type));
     pc.ResetPieces();

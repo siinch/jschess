@@ -20,9 +20,12 @@ define (["PieceData"], function (pd) {
     return pd.pieces.find(x => x.position === position);
   }
 
-  function UpdatePieceType (piece, type) {
-    pd.pieces[pd.pieces.indexOf(piece)].type = type;
+  function UpdatePieceType (position, type) {
+    //pd.pieces[pd.pieces.indexOf(piece)].type = type;
+    pd.pieces.find(x => x.position === position).type = type;
   }
+
+
 
   return {
     DeletePiece,
