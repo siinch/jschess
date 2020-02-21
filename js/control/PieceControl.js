@@ -24,7 +24,7 @@ define (["PieceData"], function (pd) {
     pd.pieces.find(x => x.position === position).type = type;
   }
 
-
+  
 
   return {
     DeletePiece,

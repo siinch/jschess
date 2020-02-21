@@ -11,6 +11,7 @@ define([], function() {
       for (var column of colums) {
         var piece = {};
         piece.position = column + row;
+        piece.GetLegalMoves = GetLegalMoves;
 
         if (row < 3)
           piece.color = "white";
@@ -37,6 +38,19 @@ define([], function() {
 
     return pieces;
   }
+
+  function GetLegalMoves() {
+    switch (this.type) {
+      case "rook": return GetLegalMovesRook(this); break;
+    }
+  }
+
+  function GetLegalMovesRook(rook) {
+    return rook.type;
+  }
+
+  console.log(pieces);
+  console.log(pieces[0].GetLegalMoves());
 
   return {
     pieces,
