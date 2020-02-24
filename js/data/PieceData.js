@@ -65,7 +65,7 @@ define([], function() {
       }
     }
 
-    // scan moves down
+    // scan up
     for(var r = row + 1; r < 9; r++) {
       var pos = letter + r;
       var otherPiece = pieces.find(x => x.position === pos);
@@ -108,8 +108,29 @@ define([], function() {
     return legalMoves;
   }
 
-  console.log(pieces);
-  console.log(pieces[0].GetLegalMoves());
+  function GetAllLegalMovesDown (piece) {
+    var legalMoves = [];
+    var letter = piece.position[0];
+    var column = columns.indexOf(piece.position[0]);
+    var row = parseInt(rook.position[1]);
+
+    // scan all the positions below the current position
+    for(var r = row -1; r > 0; r--) {
+      var pos = letter + r;
+      // check for other pieces
+      var otherPiece = pieces.find(x => x.position === pos);
+      if (otherPiece === undefined)
+        legalMoves.push(pos);
+      else {
+        // legal if other color and stop
+        if(otherPiece.color != rook.color)
+          legalMoves.push(pos);
+        break;
+      }
+    }
+
+    return legalMoves;
+  }
 
   return {
     pieces,
