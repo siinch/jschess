@@ -142,11 +142,11 @@ define([], function() {
   function GetAllLeftUp (piece) {
     var columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
     var legalMoves = [];
-    var column = columns.indexOf(piece.position[0]);
-    var row = parseInt(piece.position[1]);
+    var column = columns.indexOf(piece.position[0]) -1;
+    var row = parseInt(piece.position[1]) + 1;
 
-    for(var c = column - 1; c > -1; c--) {
-      var pos = columns[c] + row;
+    while(column > -1 && row < 9) {
+      var pos = columns[column] + row;
       var otherPiece = pieces.find(x => x.position === pos);
       if (otherPiece === undefined)
         legalMoves.push(pos);
@@ -155,9 +155,15 @@ define([], function() {
           legalMoves.push(pos);
         break;
       }
+      column--;
+      row++;
     }
+    console.log(legalMoves);
     return legalMoves;
   }
+
+  console.log(pieces)
+  GetAllLeftUp(pieces[15]);
 
   return {
     pieces,

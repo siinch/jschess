@@ -54,7 +54,6 @@ function (pc) {
     pc.UpdatePiecePosition("a1", "d5");
     var moves = pc.GetPieceMoves("d5");
 
-
     console.log("GetRookMoves_Success: " + (expectedMoves.toString() === moves.toString()));
   } GetRookMoves_Success();
 
