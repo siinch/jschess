@@ -59,13 +59,12 @@ define([], function() {
   function GetAllDown (piece) {
     var columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
     var legalMoves = [];
-    var letter = piece.position[0];
     var column = columns.indexOf(piece.position[0]);
     var row = parseInt(piece.position[1]);
 
     // scan all the positions below the current position
     for(var r = row -1; r > 0; r--) {
-      var pos = letter + r;
+      var pos = columns[column] + r;
       // check for other pieces
       var otherPiece = pieces.find(x => x.position === pos);
       if (otherPiece === undefined)
@@ -83,12 +82,11 @@ define([], function() {
   function GetAllUp (piece) {
     var columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
     var legalMoves = [];
-    var letter = piece.position[0];
     var column = columns.indexOf(piece.position[0]);
     var row = parseInt(piece.position[1]);
 
     for(var r = row + 1; r < 9; r++) {
-      var pos = letter + r;
+      var pos = columns[column] + r;
       var otherPiece = pieces.find(x => x.position === pos);
       if (otherPiece === undefined)
         legalMoves.push(pos);
@@ -104,11 +102,9 @@ define([], function() {
   function GetAllRight (piece) {
     var columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
     var legalMoves = [];
-    var letter = piece.position[0];
     var column = columns.indexOf(piece.position[0]);
     var row = parseInt(piece.position[1]);
 
-    // scan right
     for(var c = column + 1; c < 8; c++) {
       var pos = columns[c] + row;
       var otherPiece = pieces.find(x => x.position === pos);
@@ -126,11 +122,29 @@ define([], function() {
   function GetAllLeft (piece) {
     var columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
     var legalMoves = [];
-    var letter = piece.position[0];
     var column = columns.indexOf(piece.position[0]);
     var row = parseInt(piece.position[1]);
 
-    // scan left
+    for(var c = column - 1; c > -1; c--) {
+      var pos = columns[c] + row;
+      var otherPiece = pieces.find(x => x.position === pos);
+      if (otherPiece === undefined)
+        legalMoves.push(pos);
+      else {
+        if(otherPiece.color != piece.color)
+          legalMoves.push(pos);
+        break;
+      }
+    }
+    return legalMoves;
+  }
+
+  function GetAllLeftUp (piece) {
+    var columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
+    var legalMoves = [];
+    var column = columns.indexOf(piece.position[0]);
+    var row = parseInt(piece.position[1]);
+
     for(var c = column - 1; c > -1; c--) {
       var pos = columns[c] + row;
       var otherPiece = pieces.find(x => x.position === pos);
