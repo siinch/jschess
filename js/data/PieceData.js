@@ -44,6 +44,7 @@ define([], function() {
     switch (this.type) {
       case "rook": return GetLegalMovesRook(this); break;
       case "bishop": return GetLegalMovesBishop(this); break;
+      case "queen": return GetLegalMovesQueen(this); break;
     }
   }
 
@@ -58,10 +59,23 @@ define([], function() {
 
   function GetLegalMovesBishop (piece) {
     var legalMoves = [];
+    legalMoves = legalMoves.concat(GetAllLeftUp(piece));
+    legalMoves = legalMoves.concat(GetAllRightUp(piece));
+    legalMoves = legalMoves.concat(GetAllLeftDown(piece));
+    legalMoves = legalMoves.concat(GetAllRightDown(piece));
+    return legalMoves;
+  }
+
+  function GetLegalMovesQueen (piece) {
+    var legalMoves = [];
     legalMoves = legalMoves.concat(GetAllUp(piece));
     legalMoves = legalMoves.concat(GetAllDown(piece));
     legalMoves = legalMoves.concat(GetAllLeft(piece));
     legalMoves = legalMoves.concat(GetAllRight(piece));
+    legalMoves = legalMoves.concat(GetAllLeftUp(piece));
+    legalMoves = legalMoves.concat(GetAllRightUp(piece));
+    legalMoves = legalMoves.concat(GetAllLeftDown(piece));
+    legalMoves = legalMoves.concat(GetAllRightDown(piece));
     return legalMoves;
   }
 
