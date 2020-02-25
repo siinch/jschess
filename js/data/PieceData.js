@@ -43,10 +43,20 @@ define([], function() {
   function GetLegalMoves() {
     switch (this.type) {
       case "rook": return GetLegalMovesRook(this); break;
+      case "bishop": return GetLegalMovesBishop(this); break;
     }
   }
 
   function GetLegalMovesRook (piece) {
+    var legalMoves = [];
+    legalMoves = legalMoves.concat(GetAllUp(piece));
+    legalMoves = legalMoves.concat(GetAllDown(piece));
+    legalMoves = legalMoves.concat(GetAllLeft(piece));
+    legalMoves = legalMoves.concat(GetAllRight(piece));
+    return legalMoves;
+  }
+
+  function GetLegalMovesBishop (piece) {
     var legalMoves = [];
     legalMoves = legalMoves.concat(GetAllUp(piece));
     legalMoves = legalMoves.concat(GetAllDown(piece));
