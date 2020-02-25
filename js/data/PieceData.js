@@ -158,7 +158,6 @@ define([], function() {
       column--;
       row++;
     }
-    console.log(legalMoves);
     return legalMoves;
   }
 
