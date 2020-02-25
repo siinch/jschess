@@ -1,4 +1,4 @@
-define(["LegalMovesUtility"], function(lmu) {
+define([], function() {
 
   var pieces = CreatePieces();
 
@@ -47,12 +47,10 @@ define(["LegalMovesUtility"], function(lmu) {
 
   function GetLegalMovesRook (piece) {
     var legalMoves = [];
-    piece.position = "5d";
-    legalMoves = legalMoves.concat(lmu.GetAllUp(piece));
-    legalMoves = legalMoves.concat(lmu.GetAllDown(piece));
-    legalMoves = legalMoves.concat(lmu.GetAllLeft(piece));
-    legalMoves = legalMoves.concat(lmu.GetAllRight(piece));
-    console.log(legalMoves);
+    legalMoves = legalMoves.concat(GetAllUp(piece));
+    legalMoves = legalMoves.concat(GetAllDown(piece));
+    legalMoves = legalMoves.concat(GetAllLeft(piece));
+    legalMoves = legalMoves.concat(GetAllRight(piece));
     return legalMoves;
   }
 
@@ -100,7 +98,6 @@ define(["LegalMovesUtility"], function(lmu) {
         break;
       }
     }
-
     return legalMoves;
   }
 
@@ -123,7 +120,6 @@ define(["LegalMovesUtility"], function(lmu) {
         break;
       }
     }
-
     return legalMoves;
   }
 
@@ -146,7 +142,6 @@ define(["LegalMovesUtility"], function(lmu) {
         break;
       }
     }
-
     return legalMoves;
   }
 
