@@ -161,8 +161,30 @@ define([], function() {
     return legalMoves;
   }
 
+  function GetAllRightUp (piece) {
+    var columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
+    var legalMoves = [];
+    var column = columns.indexOf(piece.position[0]) + 1;
+    var row = parseInt(piece.position[1]) + 1;
+
+    while(column < 8 && row < 9) {
+      var pos = columns[column] + row;
+      var otherPiece = pieces.find(x => x.position === pos);
+      if (otherPiece === undefined)
+        legalMoves.push(pos);
+      else {
+        if(otherPiece.color != piece.color)
+          legalMoves.push(pos);
+        break;
+      }
+      column++;
+      row++;
+    }
+    return legalMoves;
+  }
+
   console.log(pieces)
-  GetAllLeftUp(pieces[15]);
+  console.log(GetAllRightUp(pieces[8]));
 
   return {
     pieces,
