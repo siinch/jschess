@@ -13,7 +13,9 @@ define (["PieceData"], function (pd) {
   }
 
   function UpdatePiecePosition (fromPos, toPos) {
-    pd.pieces.find(x => x.position === fromPos).position = toPos;
+    var piece = pd.pieces.find(x => x.position === fromPos);
+    piece.position = toPos;
+    piece.hasMoved = true;
   }
 
   function GetPiece (position) {
