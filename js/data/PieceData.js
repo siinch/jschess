@@ -12,6 +12,7 @@ define([], function() {
         var piece = {};
         piece.position = column + row;
         piece.GetLegalMoves = GetLegalMoves;
+        piece.hasMoved = false;
 
         if (row < 3)
           piece.color = "white";
@@ -227,8 +228,8 @@ define([], function() {
     return legalMoves;
   }
 
-  console.log(pieces)
-  console.log(GetAllRightDown(pieces.find(x => x.position === "a7")));
+  //console.log(pieces)
+  //console.log(GetAllRightDown(pieces.find(x => x.position === "a7")));
 
   return {
     pieces,
