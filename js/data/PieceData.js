@@ -45,6 +45,7 @@ define([], function() {
       case "rook": return GetLegalMovesRook(this); break;
       case "bishop": return GetLegalMovesBishop(this); break;
       case "queen": return GetLegalMovesQueen(this); break;
+      case "knight": return GetLegalMovesKnight(this); break;
     }
   }
 
@@ -76,6 +77,32 @@ define([], function() {
     legalMoves = legalMoves.concat(GetAllRightUp(piece));
     legalMoves = legalMoves.concat(GetAllLeftDown(piece));
     legalMoves = legalMoves.concat(GetAllRightDown(piece));
+    return legalMoves;
+  }
+
+  function GetLegalMovesKnight(piece) {
+    var columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
+    var legalMoves = []
+    var column = columns.indexOf(piece.position[0]);
+    var row = parseInt(piece.position[1]);
+    var moves = [{col: -2, row: -1}, {col: -2, row: 1}, {col: -1, row: -2}, {col: -1, row: 2}, {col: 1, row: -2}, {col: 1, row: 2}, {col: 2, row: -1}, {col: 2, row: 1}];
+
+    for (var move of moves) {
+      var c = column + move.col;
+      var r = row + move.row;
+
+      if (!(-1 < c && c < 8 && 0 < r && r < 9))
+        continue;
+      var pos = columns[c] + r;
+      var otherPiece = pieces.find(x => x.position === pos);
+      if (otherPiece === undefined)
+        legalMoves.push(pos);
+      else {
+        if (otherPiece.color != piece.color)
+          legalMoves.push(pos);
+      }
+    }
+
     return legalMoves;
   }
 
@@ -252,8 +279,8 @@ define([], function() {
     return legalMoves;
   }
 
-  //console.log(pieces)
-  //console.log(GetAllRightDown(pieces.find(x => x.position === "a7")));
+  console.log(pieces)
+  console.log(GetLegalMovesKnight(pieces.find(x => x.position === "b1")));
 
   return {
     pieces,
