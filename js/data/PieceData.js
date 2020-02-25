@@ -1,9 +1,9 @@
 define(["PieceUtility"], function(pu) {
 
-  var columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
   var pieces = CreatePieces();
 
   function CreatePieces () {
+    var columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
     var rows = [1, 2, 7, 8];
     var pieces = [];
 
