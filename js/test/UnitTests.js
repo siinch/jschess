@@ -48,6 +48,16 @@ function (pc) {
     pc.ResetPieces();
   } UpdatePieceType_Success();
 
+  function GetRookMoves_Success() {
+    var expectedMoves = ["d6", "d7", "d4", "d3", "c5", "b5", "a5", "e5", "f5", "g5", "h5"];
+
+    pc.UpdatePiecePosition("a1", "d5");
+    var moves = pc.GetPieceMoves("d5");
+
+
+    console.log("GetRookMoves_Success: " + (expectedMoves.toString() === moves.toString()));
+  } GetRookMoves_Success();
+
   return {
 
   }

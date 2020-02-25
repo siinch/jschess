@@ -24,12 +24,17 @@ define (["PieceData"], function (pd) {
     pd.pieces.find(x => x.position === position).type = type;
   }
 
+  function GetPieceMoves(position) {
+    return pd.pieces.find(x => x.position === position).GetLegalMoves();
+  }
+
   return {
     DeletePiece,
     ResetPieces,
     GetPieces,
     UpdatePiecePosition,
     GetPiece,
-    UpdatePieceType
+    UpdatePieceType,
+    GetPieceMoves
   }
 });
