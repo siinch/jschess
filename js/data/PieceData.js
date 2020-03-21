@@ -152,6 +152,35 @@ define([], function() {
     return legalMoves;
   }
 
+  function GetLegalMovesKing (piece) {
+    var columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
+    var legalMoves = [];
+    var column = columns.indexOf(piece.position[0]);
+    var row = parseInt(piece.position[1]);
+    var moves = [{col: 0, row: 1}, {col: 1, row: 1}, {col: 1, row: 0}, {col: 1, row: -1}, {col: 0, row: -1}, {col: -1, row: -1}, {col: -1, row: 0}, {col: -1, row: 1}];
+
+    for (var move of moves) {
+      var c = column + move.col;
+      var r = row + move.row;
+      if (0 < r && r < 9 && -1 < c && c < 8) {
+        var pos = columns[c] + row;
+        otherPiece = pieces.find(x => x.position === pos);
+        if (otherPiece === undefined)
+          legalMoves.push(pos);
+        else if (otherPiece.color != piece.color)
+          legalMoves.push(pos);
+      }
+    }
+    // check if castling is possible
+    if(!piece.hasMoved) {
+      var piecesLeft = GetAllLeft(piece);
+      if(piecesLeft[0].type === "rook" && !piecesLeft[0].hasMoved)
+
+    }
+
+    return legalMoves;
+  }
+
   // Helper functions
 
   function GetAllDown (piece) {
@@ -323,6 +352,11 @@ define([], function() {
       row--;
     }
     return legalMoves;
+  }
+
+  function GetAllLegalMoves(color) {
+    var legalMoves = [];
+    for ()
   }
 
   return {
