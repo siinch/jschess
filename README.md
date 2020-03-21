@@ -9,3 +9,6 @@ Here data of the pieces is generated as an array with objects with the following
 - type : string ("pawn", "rook", "knight", etc)
 
 ## Control
+
+## Current work in progress
+- GetLegalMovesPawn

@@ -106,6 +106,29 @@ define([], function() {
     return legalMoves;
   }
 
+  function GetLegalMovesPawn(piece) {
+    var columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
+    var legalMoves = []
+    var column = columns.indexOf(piece.position[0]);
+    var row = parseInt(piece.position[1]);
+    var dir = 1;
+    if(piece.color === "black") dir = -1;
+    var moves = [{col: -1, row: dir}, {col: 0, row: dir}, {col: 1, row:dir}];
+    if (!piece.hasMoved) moves.push({col: 0, 2*dir});
+
+    if (1 < row && row < 8) {
+      var pos = column + (row + direction);
+      var otherPiece = pieces.find()
+    }
+
+
+
+
+
+
+    return legalMoves;
+  }
+
   // Helper functions
 
   function GetAllDown (piece) {
@@ -278,9 +301,6 @@ define([], function() {
     }
     return legalMoves;
   }
-
-  console.log(pieces)
-  console.log(GetLegalMovesKnight(pieces.find(x => x.position === "b1")));
 
   return {
     pieces,
