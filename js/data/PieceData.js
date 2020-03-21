@@ -354,9 +354,12 @@ define([], function() {
     return legalMoves;
   }
 
-  function GetAllLegalMoves(color) {
+  function GetAllLegalMovesOpporsite(color) {
     var legalMoves = [];
-    for ()
+    var colorPieces = pieces.filter(x => x.color != color);
+    for (var piece of colorPieces)
+      legalMoves = legalMoves.concat(piece.GetLegalMoves());
+    return legalMoves;
   }
 
   return {
