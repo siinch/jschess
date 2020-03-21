@@ -1,6 +1,7 @@
 define([], function() {
 
   var pieces = CreatePieces();
+  var inEnPassant = [];
 
   function CreatePieces () {
     var columns = ["a", "b", "c", "d", "e", "f", "g", "h"];
@@ -113,18 +114,40 @@ define([], function() {
     var row = parseInt(piece.position[1]);
     var dir = 1;
     if(piece.color === "black") dir = -1;
-    var moves = [{col: -1, row: dir}, {col: 0, row: dir}, {col: 1, row:dir}];
-    if (!piece.hasMoved) moves.push({col: 0, 2*dir});
+    var moves = [{col: -1, row: dir, enPassant: false}, {col: 0, row: dir, enPassant: false}, {col: 1, row:dir, enPassant: false}];
+    if (!piece.hasMoved) moves.push({col: 0, row: 2*dir, enPassant: true});
 
-    if (1 < row && row < 8) {
-      var pos = column + (row + direction);
-      var otherPiece = pieces.find()
+    for (var move of moves) {
+      var c = column + move.col;
+      var r = row + move.row;
+      if (0 < r && r < 9 && -1 < c && c < 8) {
+        var pos = columns[c] + r;
+        var otherPiece = pieces.find(x => x.position === pos);
+        if(c === column && otherPiece === undefined) {
+          // move two forward if both spaces are empty
+          if(move.enPassant) {
+            var p = columns[c] + (move.row / 2);
+            otherPiece = pieces.find(x => x.position === p);
+            if(otherPiece === undefined)
+                legalMoves.push(pos);
+          }
+          // move one forward if space is empty
+          else legalMoves.push(pos);
+        }
+        // check if diagonal piece is same color
+        else if (otherPiece.color != piece.color)
+          legalMoves.push(pos);
+        // check for En Passant moves
+        else if (otherPiece === undefined) {
+          otherPiece = inEnPassant.find(x => x.takePos === pos);
+          if(otherPiece != undefined) {
+            otherPiece = pieces.find(x => x.position === otherPiece.actualPos);
+            if(otherPiece.color != piece.color)
+              legalMoves.push(pos);
+          }
+        }
+      }
     }
-
-
-
-
-
 
     return legalMoves;
   }
