@@ -163,7 +163,7 @@ define([], function() {
       var c = column + move.col;
       var r = row + move.row;
       if (0 < r && r < 9 && -1 < c && c < 8) {
-        var pos = columns[c] + row;
+        var pos = columns[c] + r;
         otherPiece = pieces.find(x => x.position === pos);
         if (otherPiece === undefined)
           legalMoves.push(pos);
@@ -173,9 +173,15 @@ define([], function() {
     }
     // check if castling is possible
     if(!piece.hasMoved) {
-      var piecesLeft = GetAllLeft(piece);
-      if(piecesLeft[0].type === "rook" && !piecesLeft[0].hasMoved)
+      var piecesLeft = pieces.filter(x => (x.position[1] === row && colums.indexOf(x.position[0]) < column));
+      var piecesRight = pieces.filter(x => (x.position[1] === row && colums.indexOf(x.position[0]) > column));
+      var otherColorMoves = GetAllLegalMovesOpporsite(piece.color);
 
+      if(piecesLeft[0].type === "rook" && !piecesLeft[0].hasMoved && otherColorMoves.find(x => x === (colums[colum-1] + row)) === undefined)
+        legalMoves.push(columns[column-2] + row);
+
+      if(piecesRight[0].type === "rook" && !piecesRight[0].hasMoved && otherColorMoves.find(x => x === (colums[colum-1] + row)) === undefined)
+        legalMoves.push(columns[column+2] + row);
     }
 
     return legalMoves;
